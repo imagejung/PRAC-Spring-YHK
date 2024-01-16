@@ -24,7 +24,7 @@ public class HelloController {
     @GetMapping("hello-string")
     @ResponseBody
     public String helloString(@RequestParam("name") String name) {
-        return "hello " + name; // return값 -> 데이터를 그대로 전달
+        return "hello " + name; // return값 -> 데이터를 그대로 프론트에 전달
     }
 
     @GetMapping("hello-api")
@@ -32,7 +32,7 @@ public class HelloController {
     public Hello helloApi(@RequestParam("name") String name) {
         Hello hello = new Hello();
         hello.setName(name);
-        return hello;
+        return hello; // return값 -> 객체로 반환. 스프링 내의 컨버터 통해 JSON값이 프론트에 전달
     }
 
     static class Hello {
