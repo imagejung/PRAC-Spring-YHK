@@ -9,14 +9,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
 public class MemberService {
 
     //private final MemberRepository memberRepository = new MemoryMemberRepository();
     // 테스트를 같은 repository로 하기 위해 아래와 같이 변경
     private final MemberRepository memberRepository;
 
-    @Autowired
     // DI 의존성 주입 관련
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
